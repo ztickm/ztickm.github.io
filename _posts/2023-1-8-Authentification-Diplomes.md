@@ -20,6 +20,7 @@ Présentez-vous au service des diplômes de vote université (Vice-Rectorat Grad
 1. Votre dernier diplôme universitaire original (Pour mon cas, c'était un diplôme Master).  
 2. Vos autres diplômes (Pour mon cas, c'était un diplôme provisoire Licence).  
 3. Tous vos relevés de notes (Mon cas : L1 → M2).  
+
 Demandez l'authentification avec la griffe du vice-recteur de la graduation.
 
 # Étape 2. Authentification au ministère des Études Supérieures et de la Recherche Scientifique
@@ -31,7 +32,7 @@ Approchez-vous du même service de [l'étape 1.](#etape1) Et demandez la procéd
 Je ne me rappelle pas bien comment ça se passe, mais vous vous inscrivez sur la plateforme WebAuthentification et vous complétez les étapes (scannez vos documents, etc) mais sans prendre de RDV au ministère ; ensuite, vous déposez vos diplômes et relevés de notes avec un document de confirmation que vous téléchargerez sur WebAuthentification; ce service  va se charger de transporter vos documents à Alger et les faire authentifier.  
 
 ## 2.b. Le faire indépendamment
-Pour le faire indépendamment, suivez les étapes dans la plateforme WebAuthentification.  q
+Pour le faire indépendamment, suivez les étapes dans la plateforme WebAuthentification.  
 
 # Étape 3. Authentification du diplôme de Baccalauréat + relevé de note du Bac (Alger)
 Présentez-vous tôt le matin au ministère de l'Éducation Nationale à El Mouradia, Alger avec votre diplôme du Bac ainsi que votre relevé de note du Bac ; demandez l'authentification au poste du garde, et remettez-leur les documents.
