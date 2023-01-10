@@ -4,23 +4,36 @@ title: About Me
 permalink: /about/
 ---
 ### Status
-I'm currently looking for a job in Software Developement, check my [resume](https://www.visualcv.com/salim-mahboubi/), and contact me at: [msalim@boun.cr](mailto:msalim@boun.cr) for more informations and private code portfolio.  
-**Current location:** Oran, Algeria.  
+I'm currently looking for a job in Web development, check my [resume](https://www.visualcv.com/salim-mahboubi/), and contact me on LinkedIn for more information and a private code portfolio.  
+**Current location:** Hamburg, Germany  
 **Accept remote/relocation:** Yes.  
 
-### What I am learning now
-Right now I'm focusing on front end developement, especially **React JS** and related techologies. I'm planning to learn **Elm-lang** after becoming really comfortable using React JS and co.  
-From time to time, I play with **Android**, making side projects or mini apps; I also try playing around with **blockchain** and **hashgraph** related technologies.
+### Who am I
+I am a software developer who touched a lot of technologies, from mobile to data engineering but mostly front-end web technologies.
+
+### What I am looking for
+
+I'm looking for a full-stack position with a focus on front-end. I'm open to trying new technologies, and while I don't define myself with the technologies I use, I would prefer to focus on Vue.js / Nuxt.js
+
+### Some facts (outside of work) about me
+
+I love hobbies that require sharp focus such as :
+
+* Learning Calligraphy
+* Learning to play the harmonica
+* Hiking in difficult terrain
 
 ### What I studied  
-In June 2017, I finshed my Master's program in Computer Science specializing in Education Engineering, where I learned a lot about some advanced computer science concepts, and especially how to use technology to educate people with different backgrounds and different aptitudes. We used different tools, such as **Unity Game Engine** to make serious games, **JADE(JAVA Agent DEvelopment Framework)** to make simple multi-agent systems, and others. I finalized my degree with an end of studies project where my partner and I built a mobile tourism app to assist piligrims in Mecca, taking  in consideration their abilities and specifities.  
-Before, I studied core concepts of computer science, from Algebra and algorithms to Graph Theory in my Licenciate program (equivalent to bachelor).
+In June 2017, I finished my Master's program in Computer Science specializing in Education Engineering, where I learned a lot about some advanced computer science concepts, especially how to use technology to educate people with different backgrounds and aptitudes.
+
+We used tools such as **Unity Game Engine** to make serious games, **JADE(JAVA Agent DEvelopment Framework)** to make simple multi-agent systems, and others. 
+
+I finalized my degree with an end-of-studies project where my partner and I built a mobile tourism app.  
+Before, I studied core concepts of computer science, from Algebra and algorithms to Graph Theory in my Licenciate program (equivalent to a bachelor's degree).
 
 ### Projects
-#### Leexy App [Android]: (Coming Soon To PlayStore and GitHub)
-Refills mobile credit by scanning the voucher codes with the camera. Leexy detects the mobile operator and makes the USSD call to refill the account automatically.
+#### Media-in-Vitro
+A web extension that downloads HTML media files (anything that has an src attribute) present on the current page.
+#### Leexy App [Android]: (Unmaintained)
+Refills mobile credit by scanning the voucher codes with the camera. Leexy detects the mobile operator and automatically makes the USSD call to refill the account.
 
-#### ExperTease:
-I'm a member of ExperTease, which is a project aiming to build a genuinely informed community with enough critical thinking skills
-to question the information that it consumes on a daily basis.  
-The ExperTease Project is sponsored by the State Department of the United States of America in partnership with Legacy International.
