@@ -1,0 +1,96 @@
+---
+title: "Intro to Git Hooks"
+description: "Learn git hooks and use them to automatically prepend commit messages with the strings you want."
+date: "Dec 18 2018"
+---
+
+![a boulder being pushed uphill with the words "Git Push Boulder" written](/images/gitpushboulder.png)
+
+> Where there is repetition, there shall be automation
+—King Sisyphus of Ephyra
+
+These words maybe were not said by Sisyphus, but they are not without wisdom; follow them when possible.
+While programming, one of the most repetitive actions is typing the same set of characters every time you write a git commit, whether they be issue numbers, branch names, signatures, or something else. Those repetitive tasks might be due to a lot of reasons like company standardization or just plain open source commit guidelines.
+
+
+***Disclaimer:*** *please do not try git hooks on important repositories unless you fully understand what the commands you are invoking do. Try new things on a new empty repository that you can delete if things don't work out the way they were supposed to*
+
+
+# What are hooks? Git hooks?
+In programming, hooks are —generally speaking— bits of custom code that the base code allows to intervene at certain places.
+
+In git, we're allowed to do that; we write a script, configure it, and it gets executed before or after git events/actions such as a commit, a merge, or a rebase.
+
+# Our use case
+In my job, I find myself writing basically the same word in the start of each commit message. So I thought of finding a way to automatically append that same word to every git commit message.
+Keep in mind that there are way more use cases, for example you can use a git hook to:
+* Auto lint and auto format your code before each commit
+* Auto deploy to a server
+* Run a new release build after each merge to your main/master branch
+
+### Where to put our script?
+First, you need to be able to see hidden files, then you simply go to the `/.git/hooks` directory in your local repository. That's where hooks are stored for each repository. You can find a bunch of sample scripts in this directory. Either edit the `prepare-commit-msg.sample` and save it as `prepare-commit-msg` (with no extension), or just create a new file with `prepare-commit-msg` as a name.
+
+### What to put in our script?
+You can virtually write your script in any script language like bash, php, JS, python, ruby, and many others. For our purposes, we will write our script using bash and a unix utility called sed.
+
+Before diving in the code, you should know that a prepare-commit-msg hook gives you access to 3 parameters, in order:
+1. The file that contains the commit message itself (We will only use this one)
+2. The source of the commit message
+3. The SHA-1 of the commit if we're editing it
+
+These parameters are accessible through bash positional parameters that follow the aforementioned order, so the commit message file is in the variable `$1`.
+
+Our script looks like this:
+```bash
+#!/bin/sh
+
+COMMIT_MSG_FILE=$1
+
+MY_MSG="I LOVE MOM"
+
+sed -i.old "1s/^/ $MY_MSG \n /" "$COMMIT_MSG_FILE"
+```
+
+What it does is pretty straightforward:
+1. We put the commit message in a variable with a better name *i.e.* COMMIT_MSG_FILE
+2. We put the word we want to be appended to each commit message in another variable for easy access and editing
+3. We execute a `sed` command that adds the content of our `$MY_MSG` variable to the top of the commit message file
+
+#### The sed command
+`sed` is a powerful utility that parses through and edits text. It is out of the scope of this tutorial, so we will just understand the used command.
+
+Besides the options, the sed utility takes two parameters:
+* The input file (`$COMMIT_MSG_FILE` in our case)
+* The script, where we tell it how to manipulate text from the input (in our case it is this: `1s/^/ $MY_MSG \n /`)
+
+In our command we specify the `-i.old` option which tells `sed` to edit the file in place *i.e.* overwrite it and create a backup file with the same name plus the **.old** extension. You can use any extension you want, **.back** and **.bak** are widely used.
+
+Now we decipher the script.
+`sed` substitution scripts are usually divided by forward slashes in 3 parts:
+1. The type of operation we are doing (substitution, deletion, ...) and which lines/part of the text we are affecting
+2. A regular expression to search for the part that is getting substituted
+3. A replacement string
+
+In our case:
+* The `1` in the beginning means "only the first line"
+* The `s` means this is a substitute operation
+* The `^` caret means the start of the buffer, so this isn't really a substitution but an addition
+* `$MY_MSG \n` is the replacement string, so the contents of $MY_MSG plus a carriage return
+
+### Test the script
+After saving the script and making it executable (`chmod +x prepare-commit-msg` in *nix systems), we just need to commit something.
+
+Edit a file, stage it, and upon executing `git commit` a text editor pops open with the commit message file loaded, and sure enough the first line proudly says "I LOVE MOM"
+
+![A console screenshot of a git commit message](/images/gitilovemom.png)
+
+If you specify the message through the `-m` option or through your text editor/IDE, the message will be appended by "I LOVE MOM" automatically. Try it and use `git log` to see your beautiful commits.
+
+# What's next?
+This is a rather simple use case, you can try making the message dynamic or maybe try another hook. I can't recommend you enough to read more about git hooks and utilities like sed. I am sure you will find at least a way to automate some tasks and become more productive.
+
+## Further reading
+* [Git Hooks Docs](https://git-scm.com/docs/githooks)
+* [Customizing Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)
+* [Sed - An Introduction and Tutorial by Bruce Barnett](https://www.grymoire.com/Unix/Sed.html#uh-1)
