@@ -17,7 +17,7 @@ While programming, one of the most repetitive actions is typing the same set of 
 
 
 # What are hooks? Git hooks?
-In programming, hooks are —generally speaking— bits of custom code that the base code allows to intervene at certain places.
+In programming, hooks are, generally speaking, bits of custom code that the base code allows to intervene at certain places.
 
 In git, we're allowed to do that; we write a script, configure it, and it gets executed before or after git events/actions such as a commit, a merge, or a rebase.
 
