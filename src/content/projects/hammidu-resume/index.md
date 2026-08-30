@@ -24,7 +24,17 @@ The whole toolchain is wrapped in **Flouka Studio**, a web app that runs on your
 - Refine the visuals, orders of the sections.
 - Then download the result as PDF, HTML or JSON.
 
+A new application starts with nothing but the job posting.
+
+![Flouka Studio's new application screen: a job description pasted into a text area, below it a model selector and an optional field for extra tailoring instructions](./flouka-new-application.png)
+
+From there the agent scores the match, names the gaps it found, and rewrites the resume around the role. The PDF is previewed live next to the JSON editor, the layout configurator and the JD analysis, and the chat sidebar takes edits in plain language.
+
+![A tailored application in Flouka Studio: an 88% match score with required skills and gaps to address on the left, a live PDF preview in the middle, and a chat sidebar where a request to mention network diagnostics experience has just been applied](./flouka-application-detail.png)
+
 Your job applications are tracked on a dashboard with match scores, and everything persists in a local SQLite file: nothing leaves the machine except the tailoring calls to Claude or DeepSeek.
+
+![The Flouka Studio dashboard: a grid of job application cards, each showing a role, a company and a match score, with view, PDF and delete actions](./flouka-dashboard.png)
 
 ### Packages
 
